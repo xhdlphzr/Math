@@ -11,8 +11,8 @@ int main() {
     using std::ifstream;
     using std::vector;
 
-    ifstream map("./input/map.txt");
-    ifstream pth("./input/pth.txt");
+    ifstream map("../input/map.txt");
+    ifstream pth("../input/pth.txt");
 
     const unsigned int INF = 99999999;
     const unsigned int LIGHT_TIME = 1;
