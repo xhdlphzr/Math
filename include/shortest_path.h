@@ -5,13 +5,11 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <stack>
 
 using std::cout;
 using std::endl;
 using std::min;
 using std::vector;
-using std::stack;
 
 class shortest_path {
 private:
@@ -19,7 +17,6 @@ private:
     vector<unsigned int> &pre;
     vector<unsigned int> &time;
     vector<bool> &book;
-    stack<unsigned int> path;
 
 public:
     shortest_path(vector<vector<unsigned int>> &_gragh, vector<unsigned int> &_pre, vector<unsigned int> &_time, vector<bool> &_book) : graph(_gragh), pre(_pre), time(_time), book(_book) {}
