@@ -33,6 +33,8 @@ public:
 
     /**
      * @brief Dijkstra求最短时间
+     * @param INF 无穷大
+     * @param LIGHT_TIME 红绿灯时间
      * @param dot 点数
      */
     void dijkstra(const unsigned int INF, const unsigned int LIGHT_TIME, unsigned int dot);
