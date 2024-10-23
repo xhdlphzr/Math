@@ -105,7 +105,7 @@ class shortest_path {
 private:
     /// 如上主程序
     vector<vector<unsigned int>> &graph;
-    vector<unsigned int> ⪯
+    vector<unsigned int> &pre ;
     vector<unsigned int> &time;
     vector<bool> &book;
 
