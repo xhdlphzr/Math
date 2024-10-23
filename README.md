@@ -6,12 +6,10 @@
 
 其他的Floyd, Bellman或者A*也都十分好用啊
 
-原因如下: 
+原因如下:
 
 1. 非常~~灵动~~有扩展性
-
 2. 复杂度较低
-
 3. 及其稳定
 
 ## Many Parts
@@ -19,13 +17,9 @@
 本程序分为以下部分：
 
 1. 主程序 (提供数据)
-
 2. class shortest_path类定义
-
 3. init初始化函数实现
-
 4. dijkstra最短路径函数实现
-
 5. print输出函数实现
 
 ## Part 1 主程序
@@ -111,7 +105,7 @@ class shortest_path {
 private:
     /// 如上主程序
     vector<vector<unsigned int>> &graph;
-    vector<unsigned int> &pre;
+    vector<unsigned int> ⪯
     vector<unsigned int> &time;
     vector<bool> &book;
 
@@ -232,9 +226,7 @@ make run
 
 ```bash
 g++ .\src\main.cpp .\lib\init.cpp .\lib\dijkstra.cpp .\lib\print.cpp -o .\build\main.exe
-.\build\main.exe
+cd .\build && .\main.exe
 ```
 
 没有的话就输入如上数据就可以了 (没有g++就没办法了)
-
-
