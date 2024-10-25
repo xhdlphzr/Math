@@ -41,7 +41,6 @@ int main() {
     using std::vector;
 
     ifstream map("../input/map.txt");
-    ifstream pth("../input/pth.txt");
 
     const unsigned int INF = 99999999;
     const unsigned int LIGHT_TIME = 1;
@@ -49,7 +48,7 @@ int main() {
     unsigned int start, end; ///< 起点和终点
 
     map >> dot >> side;
-    pth >> start >> end;
+    cin >> start >> end;
 
     vector<vector<unsigned int>> gragh(dot + 1, vector<unsigned int>(dot + 1, 0)); ///< 邻接矩阵
     vector<unsigned int> time(dot + 1, INF); ///< 最短时间数组
@@ -80,7 +79,7 @@ int main() {
     cout << endl << time[end] << endl;
 
     system("pause");
-  
+    
     return 0;
 }
 ```
@@ -105,7 +104,7 @@ class shortest_path {
 private:
     vector<vector<unsigned int>> &graph;
     vector<unsigned int> &time;
-    vector<unsigned int> ⪯
+    vector<unsigned int> &pre;
     vector<bool> &book;
 
 public:
@@ -143,7 +142,7 @@ public:
 #include "../include/shortest_path.h"
 
 void shortest_path::init(unsigned int dot, unsigned int start) {
-    time[start] = 0; ///< 起点到起点的距离为0
+    time[start] = 0; ///< 起点到起点的时间为0
 
     for (unsigned int i = 1; i <= dot; i += 1) {
         pre[i] = i; ///< 将每个节点的前驱设为自身
