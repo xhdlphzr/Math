@@ -12,7 +12,6 @@ int main() {
     using std::vector;
 
     ifstream map("../input/map.txt");
-    ifstream pth("../input/pth.txt");
 
     const unsigned int INF = 99999999;
     const unsigned int LIGHT_TIME = 1;
@@ -20,7 +19,7 @@ int main() {
     unsigned int start, end; ///< 起点和终点
 
     map >> dot >> side;
-    pth >> start >> end;
+    cin >> start >> end;
 
     vector<vector<unsigned int>> gragh(dot + 1, vector<unsigned int>(dot + 1, 0)); ///< 邻接矩阵
     vector<unsigned int> time(dot + 1, INF); ///< 最短时间数组
