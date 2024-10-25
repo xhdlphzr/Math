@@ -22,7 +22,7 @@ int main() {
     map >> dot >> side;
     pth >> start >> end;
 
-    vector<vector<unsigned int>> gragh(dot + 1, vector<unsigned int>(dot + 1, 0)); ///< 邻接矩阵兼动态规划矩阵
+    vector<vector<unsigned int>> gragh(dot + 1, vector<unsigned int>(dot + 1, 0)); ///< 邻接矩阵
     vector<unsigned int> pre(dot + 1, 0);
     vector<unsigned int> time(dot + 1, INF);
     vector<bool> book(dot + 1, false);
