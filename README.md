@@ -40,8 +40,8 @@ int main() {
     using std::ifstream;
     using std::vector;
 
-    ifstream map("./input/map.txt");
-    ifstream pth("./input/pth.txt");
+    ifstream map("../input/map.txt");
+    ifstream pth("../input/pth.txt");
 
     const unsigned int INF = 99999999;
     const unsigned int LIGHT_TIME = 1;
@@ -51,12 +51,12 @@ int main() {
     map >> dot >> side;
     pth >> start >> end;
 
-    vector<vector<unsigned int>> gragh(dot + 1, vector<unsigned int>(dot + 1, 0)); ///< 邻接矩阵兼动态规划矩阵
-    vector<unsigned int> pre(dot + 1, 0); ///< 前驱节点数组
+    vector<vector<unsigned int>> gragh(dot + 1, vector<unsigned int>(dot + 1, 0)); ///< 邻接矩阵
     vector<unsigned int> time(dot + 1, INF); ///< 最短时间数组
+    vector<unsigned int> pre(dot + 1, 0); ///< 前驱节点数组
     vector<bool> book(dot + 1, false); ///< 标记数组
 
-    /// 邻接矩阵的初始化
+    /// 初始化
     for (unsigned int i = 1; i <= dot; i += 1) {
         for (unsigned int j = 1; j <= dot; j += 1) {
             if (i != j) {
@@ -76,11 +76,11 @@ int main() {
     shortest_path obj(gragh, pre, time, book); ///< 创造实例
     obj.init(dot, start); ///< 初始化time数组
     obj.dijkstra(INF, LIGHT_TIME, dot); ///< 最短路径算法
-    obj.print(start, end); ///< 打印路径和时间
+    obj.print(start, end); ///< 打印路径
     cout << endl << time[end] << endl;
 
     system("pause");
-
+  
     return 0;
 }
 ```
@@ -103,10 +103,9 @@ using std::vector;
 
 class shortest_path {
 private:
-    /// 如上主程序
     vector<vector<unsigned int>> &graph;
-    vector<unsigned int> &pre ;
     vector<unsigned int> &time;
+    vector<unsigned int> ⪯
     vector<bool> &book;
 
 public:
@@ -168,7 +167,6 @@ void shortest_path::dijkstra(const unsigned int INF, const unsigned int LIGHT_TI
 
         /// 寻找蓝点 (已知最短路径)
         for (unsigned int j = 1; j <= dot; j += 1) {
-            /// 如果不已知且时间最小, 更换蓝点
             if (book[j] == false && time[j] < min) {
                 min = time[j];
                 from = j;
@@ -183,7 +181,6 @@ void shortest_path::dijkstra(const unsigned int INF, const unsigned int LIGHT_TI
 
         /// 更新时间和前驱节点
         for (unsigned int to = 1; to <= dot; to += 1) {
-            /// 如果不已知、有通路且更新后更小, 则更新时间及前驱
             if (book[to] == false && graph[from][to] < INF && time[from] + graph[from][to] + LIGHT_TIME < time[to]) {
                 time[to] = time[from] + graph[from][to] + LIGHT_TIME;
                 pre[to] = from;
