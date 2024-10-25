@@ -14,8 +14,8 @@ using std::vector;
 class shortest_path {
 private:
     vector<vector<unsigned int>> &graph;
-    vector<unsigned int> &pre;
     vector<unsigned int> &time;
+    vector<unsigned int> &pre;
     vector<bool> &book;
 
 public:

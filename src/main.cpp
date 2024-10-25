@@ -23,9 +23,9 @@ int main() {
     pth >> start >> end;
 
     vector<vector<unsigned int>> gragh(dot + 1, vector<unsigned int>(dot + 1, 0)); ///< 邻接矩阵
-    vector<unsigned int> pre(dot + 1, 0);
-    vector<unsigned int> time(dot + 1, INF);
-    vector<bool> book(dot + 1, false);
+    vector<unsigned int> time(dot + 1, INF); ///< 最短时间数组
+    vector<unsigned int> pre(dot + 1, 0); ///< 前驱节点数组
+    vector<bool> book(dot + 1, false); ///< 标记数组
 
     /// 初始化
     for (unsigned int i = 1; i <= dot; i += 1) {
