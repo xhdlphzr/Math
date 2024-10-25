@@ -47,7 +47,7 @@ int main() {
     shortest_path obj(gragh, pre, time, book); ///< 创造实例
     obj.init(dot, start); ///< 初始化time数组
     obj.dijkstra(INF, LIGHT_TIME, dot); ///< 最短路径算法
-    obj.print(start, end); ///< 打印路径和时间
+    obj.print(start, end); ///< 打印路径
     cout << endl << time[end] << endl;
 
     system("pause");
