@@ -27,9 +27,11 @@
 这里使用了邻接矩阵进行存储城市路径的有向图
 
 ```cpp
+#include <cstdio>
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <vector>
 #include "../include/shortest_path.h"
 
@@ -38,17 +40,32 @@ int main() {
     using std::cout;
     using std::endl;
     using std::ifstream;
+    using std::string;
     using std::vector;
-
-    ifstream map("../input/map.txt");
 
     const unsigned int INF = 99999999;
     const unsigned int LIGHT_TIME = 1;
     unsigned int dot, side; ///< 点数和边数
     unsigned int start, end; ///< 起点和终点
+    string input_file;
+    ifstream map;
+
+    cin >> input_file;
+    cin >> start >> end;
+
+    if (input_file == "car") {
+        map = ifstream("../input/map_car.txt");
+    }
+
+    if (input_file == "slow_car") {
+        map = ifstream("../input/map_slow_car.txt");
+    }
+
+    if (input_file == "people") {
+        map = ifstream("../input/map_people.txt");
+    }
 
     map >> dot >> side;
-    cin >> start >> end;
 
     vector<vector<unsigned int>> gragh(dot + 1, vector<unsigned int>(dot + 1, 0)); ///< 邻接矩阵
     vector<unsigned int> time(dot + 1, INF); ///< 最短时间数组
