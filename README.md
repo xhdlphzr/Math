@@ -1,10 +1,10 @@
-# 城市路径规划中的$Dijkstra$算法
+# 城市路径规划中的Dijkstra算法
 
-## $Why$ $Dijkstra$?
+## Why Dijkstra?
 
 为什么不使用其他的算法呢？
 
-其他的$Floyd$, $Bellman$或者$A*$也都十分好用啊
+其他的Floyd, Bellman或者A*也都十分好用啊
 
 原因如下:
 
@@ -12,17 +12,17 @@
 2. 复杂度较低
 3. 极其稳定
 
-## $Many$ $Parts$
+## Many Parts
 
 本程序分为以下部分：
 
 1. 主程序 (提供数据)
-2. $class$ $shortest_path$类定义
-3. $init$初始化函数实现
-4. $dijkstra$最短路径函数实现
-5. $print$输出函数实现
+2. class shortest_path类定义
+3. init初始化函数实现
+4. dijkstra最短路径函数实现
+5. print输出函数实现
 
-## $Part$ $1$ 主程序
+## Part 1 主程序
 
 这里使用了邻接矩阵进行存储城市路径的有向图
 
@@ -101,7 +101,7 @@ int main() {
 }
 ```
 
-## $Part$ $2$ $shortest_path$类定义
+## Part 2 shortest_path类定义
 
 ```cpp
 #ifndef SHORTEST_PATH_H
@@ -153,7 +153,7 @@ public:
 #endif
 ```
 
-## $Part$ $3$ $init$函数实现
+## Part 3 init函数实现
 
 ```cpp
 #include "../include/shortest_path.h"
@@ -169,7 +169,7 @@ void shortest_path::init(unsigned int dot, unsigned int start) {
 }
 ```
 
-## $Part$ $4$ $dijkstra$函数实现
+## Part 4 dijkstra函数实现
 
 很重要的一点, 我们使用了前驱数组进行记录来输出 (参照下文)
 
@@ -208,7 +208,7 @@ void shortest_path::dijkstra(const unsigned int INF, const unsigned int LIGHT_TI
 }
 ```
 
-## $Part$ $5$ $print$函数实现
+## Part 5 print函数实现
 
 值得一提的是, 这里使用了上文提到的前驱数组, 使用递归进行了输出 (参照上文)
 
@@ -235,11 +235,11 @@ void shortest_path::print(unsigned int start, unsigned int to) {
 make run
 ```
 
-如上, 在命令行输入以上数据即可 ($tips$: 需要$make$, 如果没有, 请参照下文)
+如上, 在命令行输入以上数据即可 (tips: 需要make, 如果没有, 请参照下文)
 
 ```bash
 g++ .\src\main.cpp .\lib\init.cpp .\lib\dijkstra.cpp .\lib\print.cpp -o .\build\main.exe
 cd .\build && .\main.exe
 ```
 
-没有的话就输入如上数据就可以了 (没有$g++$就没办法了)
+没有的话就输入如上数据就可以了 (没有g++就没办法了)
