@@ -235,11 +235,26 @@ void shortest_path::print(unsigned int start, unsigned int to) {
 make run
 ```
 
-如上, 在命令行输入以上数据即可 (tips: 需要make, 如果没有, 请参照下文)
+接下来一行：三种类型 (car, slow_car, people)
+
+再来一行：起点和终点
+
+如上, 在命令行输入以上命令即可 (tips: 需要make, 如果没有, 请参照下文)
 
 ```bash
 g++ .\src\main.cpp .\lib\init.cpp .\lib\dijkstra.cpp .\lib\print.cpp -o .\build\main.exe
-cd .\build && .\main.exe
+.\build\main.exe
 ```
 
 没有的话就输入如上数据就可以了 (没有g++就没办法了)
+
+## 贡献名单
+
+### 开发者
+
+1. xhdlphzr
+2. computer-6-2024
+
+### 审核
+
+1. xhdlphzr
