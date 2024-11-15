@@ -235,7 +235,7 @@ void shortest_path::print(unsigned int start, unsigned int to) {
 make run
 ```
 
-接下来一行：三种类型 (car, slow_car, people)
+接下来一行：四种类型 (car, slow_car, bike, people)
 
 再来一行：起点和终点
 
