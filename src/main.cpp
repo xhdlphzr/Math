@@ -31,6 +31,10 @@ int main() {
         map = ifstream("../input/map_slow_car.txt");
     }
 
+    if (input_file == "bike") {
+        map = ifstream("../input/map_bike.txt");
+    }
+
     if (input_file == "people") {
         map = ifstream("../input/map_people.txt");
     }
